@@ -1,12 +1,11 @@
 import React from 'react'
-import './searchBar.css'
 
 const searchBar = (props) => {
         return (
             <div className='searchBar'>
                 <form>
-                    <label htmlFor='search' className='searchText'>Search:</label>
-                    <input type='text' onChange={props.handleSearch}/>
+                    <label htmlFor='search' className='searchText'></label>
+                    <input type='text' onChange={props.handleSearch} placeholder='Search Here'/>
                     <button type='submit'>Submit</button>
                 </form>
             </div>
