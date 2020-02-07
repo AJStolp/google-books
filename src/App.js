@@ -14,16 +14,25 @@ class App extends React.Component {
     super(props)
     this.state = {
       books: [],
-      // printType: all,
-      // bookType: all,
+      printType: all,
+      bookType: all,
       searchField: '',
     }
   }
 
-  // paramsGoogle = {
-  //   key: apiKey,
-  //   q: this.state.searchField
-  // }
+  paramsGoogle = {
+    key: apiKey,
+    q: this.state.searchField
+  }
+
+  formatParams(params) {
+    const queryItems = Object.keys(params)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+        return queryItems.join('&');
+}
+  queryStringGoogle = formatParams(paramsGoogle);
+  newGoogleUrl = googleUrl + '?' + queryStringGoogle;
+
 
 handleSearch = (e) => {
   console.log(e.target.value);
@@ -58,7 +67,7 @@ componentDidMount() {
       })
     })
     .catch(err => {
-      alert(`Sorry, Something went Wrong. PLease Try again! ${err.message}`)
+      alert(`Sorry, Something went Wrong. Please Try again! ${err.message}`)
     })
 }
 
