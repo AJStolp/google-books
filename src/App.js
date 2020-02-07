@@ -1,31 +1,35 @@
 import React from 'react';
-import './App.css';
-import Header from './Header'
-import SearchFilterApp from './searchFilterApp/searchFilterApp'
+import Header from './header';
+import SearchFilterApp from './searchFilterApp/searchFilterApp';
 
-const url = '';
-const apiKey = 'AIzaSyDNXADSE0aeI48JpVKJej3uK3xyxmhHMAg';
+// const url = '';
+// const apiKey = 'AIzaSyDNXADSE0aeI48JpVKJej3uK3xyxmhHMAg';
 
-class App extends React.Component() {
-  constructor() {
-    super()
-    this.state = {
-      books: [],
-      printType: all,
-      bookType: all,
-      search: ''
-    }
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+      this.state = {
+        books: [],
+        // printType: all,
+        // bookType: all,
+        searchField: '',
+      }
 }
 
-componentDidMount() {
-  fetch()
+handleSearch = (e) => {
+  console.log(e.target.value);
+  this.setState({searchField: e.target.value})
 }
+
+// componentDidMount() {
+//   fetch()
+// }
 
   render() {
       return (
         <div className="App">
           <Header />
-          <SearchFilterApp />
+          <SearchFilterApp handleSearch={this.handleSearch}/>
         </div>
     );
   }

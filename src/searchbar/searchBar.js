@@ -1,26 +1,16 @@
 import React from 'react'
+import './searchBar.css'
 
-class searchBar extends React.Component {
-    constructor() {
-        super()
-    }
-
-    render() {
+const searchBar = (props) => {
         return (
             <div className='searchBar'>
                 <form>
-                    <label for='search'>Search:</label>
-                    <input 
-                    type='text'
-                    value='' 
-                    placeholder='Search For Books Here'
-                    name='search'
-                    />Search
-                    <button name='submit' vlaue='submit'></button>
+                    <label htmlFor='search' className='searchText'>Search:</label>
+                    <input type='text' onChange={props.handleSearch}/>
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
         )
-    }
 }
 
 export default searchBar
