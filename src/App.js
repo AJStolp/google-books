@@ -20,19 +20,11 @@ class App extends React.Component {
     }
   }
 
-  // paramsGoogle = {
-  //   key: apiKey,
-  //   q: this.state.searchField
-  // }
-
   formatParams(params) {
     const queryItems = Object.keys(params)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
         return queryItems.join('&');
 }
-  // queryStringGoogle = formatParams(paramsGoogle);
-  // newGoogleUrl = googleUrl + '?' + queryStringGoogle;
-
 
 handleSearch = (e) => {
   console.log(e.target.value);
@@ -52,13 +44,13 @@ handleTypeOfBook = (selectedType) => {
 }
 
 componentDidMount() {
-  paramsGoogle = {
+  const paramsGoogle = {
     key: apiKey,
     q: this.state.searchField
   }
 
-  queryStringGoogle = formatParams(paramsGoogle);
-  newGoogleUrl = googleUrl + '?' + queryStringGoogle;
+  let queryStringGoogle = this.formatParams(paramsGoogle);
+  let newGoogleUrl = googleUrl + '?' + queryStringGoogle;
 
  fetch(newGoogleUrl)
     .then(response => {
@@ -75,7 +67,7 @@ componentDidMount() {
       })
     })
     .catch(err => {
-      alert(`Sorry, Something went Wrong. Please Try again! ${err.message}`)
+      alert(`Sorry, Something went wrong. Please Try again! ${err.message}`)
     })
 }
 
