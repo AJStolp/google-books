@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from './header';
 import SearchFilterApp from './searchFilterApp/searchFilterApp';
-// import BookListings from './bookListings/bookListings'
+import BookListings from './bookListings/bookListings';
 
 
 const googleUrl = 'https://www.googleapis.com/books/v1/volumes';
+// const googleUrl = 'https://www.googleapis.com/auth/books';
 const apiKey = 'AIzaSyDNXADSE0aeI48JpVKJej3uK3xyxmhHMAg';
 
 
@@ -28,6 +29,7 @@ class App extends React.Component {
 
 handleSearch = (e) => {
   console.log(e.target.value);
+  e.preventDefault();
   this.setState({searchField: e.target.value})
 }
 
@@ -46,16 +48,28 @@ handleTypeOfBook = (selectedType) => {
 componentDidMount() {
   const paramsGoogle = {
     key: apiKey,
-    q: this.state.searchField
+    q: this.searchField
+  }
+
+
+  const options = {
+    method: 'GET',
+    header: {
+      'Access-Control-Allow-Origin': 'no-cors',
+      "Content-Type": "text/plain",
+
+    }
   }
 
   let queryStringGoogle = this.formatParams(paramsGoogle);
   let newGoogleUrl = googleUrl + '?' + queryStringGoogle;
 
- fetch(newGoogleUrl)
+
+  fetch(newGoogleUrl, options)
     .then(response => {
+      console.log(this.state)
       if(!response.ok) {
-        throw new Error
+        throw new Error()
       } else {
         return response.json()
       }
@@ -80,7 +94,7 @@ componentDidMount() {
           handlePrintType={this.handlePrintType}
           handleTypeOfBook={this.handleTypeOfBook}
           />
-          {/* <BookListings /> */}
+          <BookListings books={this.state.books}/>
         </div>
     );
   }

@@ -6,9 +6,8 @@ const typeSelect = (props) => {
             <form>
                 <select onChange={props.handlePrintType}>
                 </select>
-
+                
                 <select onChange={props.handleTypeOfBook}>
-
                 </select>
             </form>
         </div>

@@ -1,15 +1,13 @@
-// import React from 'react'
+import React from 'react'
 
-// const bookListings = (props) => {
-//         return (
-//             <div className='bookList'>
-//                 <form>
-//                     <label htmlFor='search' className=''></label>
-//                     <input type='text' onChange={props.handleSearch} placeholder='Search Here'/>
-//                     <button type='submit'>Submit</button>
-//                 </form>
-//             </div>
-//         )
-// }
+const bookListings = (props) => {
+        return (
+            <div className='bookList' books={props.books}>
+                <ul>
+                    <li>{/* {books} */}</li>
+                </ul>
+            </div>
+        )
+}
 
-// export default bookListings
+export default bookListings
