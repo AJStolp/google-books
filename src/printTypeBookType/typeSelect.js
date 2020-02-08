@@ -6,7 +6,7 @@ const typeSelect = (props) => {
             <form>
                 <select onChange={event => props.handlePrintType(event.target.value)}>
                     <option>All</option>
-                    <option>Magazine</option>
+                    <option>magazines</option>
                     <option>Books</option>
                 </select>
                 <select onChange={e => props.handleFilterType(e.target.value)}>
