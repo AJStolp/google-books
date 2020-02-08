@@ -5,7 +5,7 @@ import TypeSelect from '../printTypeBookType/typeSelect';
 const searchFilterApp = (props) => {
     return (
             <div>
-                <SearchBar handleSearch={props.handleSearch}/>
+                <SearchBar handleSearch={props.handleSearch} handleSubmit={props.handleSubmit}/>
                 <TypeSelect handlePrintType={props.handlePrintType} handleBookType={props.handleBookType}/>
             </div>
         )

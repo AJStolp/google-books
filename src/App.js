@@ -19,6 +19,7 @@ class App extends React.Component {
       // bookType: all,
       searchField: '',
     }
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   formatParams(params) {
@@ -27,9 +28,12 @@ class App extends React.Component {
         return queryItems.join('&');
 }
 
+handleSubmit = (event) => {
+  event.preventDefault();
+}
+
 handleSearch = (e) => {
   console.log(e.target.value);
-  e.preventDefault();
   this.setState({searchField: e.target.value})
 }
 
@@ -89,7 +93,8 @@ componentDidMount() {
       return (
         <div className="App">
           <Header />
-          <SearchFilterApp 
+          <SearchFilterApp
+          handleSubmit={this.handleSubmit} 
           handleSearch={this.handleSearch}
           handlePrintType={this.handlePrintType}
           handleTypeOfBook={this.handleTypeOfBook}
