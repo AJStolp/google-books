@@ -29,30 +29,12 @@ class App extends React.Component {
 }
 
 handleSubmit = (event) => {
+  console.log(this.searchField)
   event.preventDefault();
-}
 
-handleSearch = (e) => {
-  console.log(e.target.value);
-  this.setState({searchField: e.target.value})
-}
-
-handlePrintType = (selectedPrint) => {
-  this.setState({
-    printType: selectedPrint
-  })
-}
-
-handleTypeOfBook = (selectedType) => {
-  this.setState({
-    bookType: selectedType
-  })
-}
-
-componentDidMount() {
   const paramsGoogle = {
     key: apiKey,
-    q: this.searchField
+    q: this.handleSearch
   }
 
 
@@ -88,6 +70,24 @@ componentDidMount() {
       alert(`Sorry, Something went wrong. Please Try again! ${err.message}`)
     })
 }
+
+handleSearch = (e) => {
+  console.log(e.target.value);
+  this.setState({searchField: e.target.value})
+}
+
+handlePrintType = (selectedPrint) => {
+  this.setState({
+    printType: selectedPrint
+  })
+}
+
+handleTypeOfBook = (selectedType) => {
+  this.setState({
+    bookType: selectedType
+  })
+}
+
 
   render() {
       return (
