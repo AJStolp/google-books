@@ -5,11 +5,12 @@ const typeSelect = (props) => {
         <div>
             <form>
                 <select onChange={this.handlePrintType}>
-                    
+                    <option>All</option>
+                    <option>Magazine</option>
+                    <option>eBook</option>
                 </select>
-                
                 <select onChange={this.handleTypeOfBook}>
-                    
+                <option>Free</option>
                 </select>
             </form>
         </div>

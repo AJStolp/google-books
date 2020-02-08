@@ -91,17 +91,14 @@ handleTypeOfBook = (selectedBookType) => {
 
 
   render() {
-    const printType = ['all', 'magazine', 'ebook'];
-    const bookType = ['all', 'free'];
-
-
-      return (
+    
+    return (
         <div className="App">
           <Header />
           <SearchFilterApp
           handleSubmit={this.handleSubmit} 
           handleSearch={this.handleSearch}
-          handlePrintType={selectedPrint => this.handlePrintType (selectedPrint)}
+          handlePrintType={selectedPrint => this.handlePrintType(selectedPrint)}
           handleTypeOfBook={selectedBookType => this.handleTypeOfBook(selectedBookType)}
           />
           <BookListings books={this.state.books}/>
