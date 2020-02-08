@@ -15,10 +15,9 @@ class App extends React.Component {
     super(props)
     this.state = {
       books: [],
-      printType: '',
-      // bookType: '',
+      printType: 'all',
       searchField: '',
-      filter: '',
+      filter: 'full',
     }
     this.handleSearch = this.handleSearch.bind(this)
   }
@@ -102,9 +101,9 @@ handleFilterType = (selectedBookType) => {
           handleSubmit={this.handleSubmit} 
           handleSearch={this.handleSearch}
           handlePrintType={selectedPrint => this.handlePrintType(selectedPrint)}
-          handleTypeOfBook={selectedBookType => this.handleFilterType(selectedBookType)}
+          handleFilterType={selectedBookType => this.handleFilterType(selectedBookType)}
           />
-          <BookListings books={this.state.books}/>
+          <BookListings />
         </div>
     );
   }
