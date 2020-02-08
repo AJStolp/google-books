@@ -34,7 +34,7 @@ handleSubmit = (event) => {
 
   const paramsGoogle = {
     key: apiKey,
-    q: this.handleSearch
+    q: this.state.searchField
   }
 
 
