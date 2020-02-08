@@ -4,7 +4,7 @@ const bookListings = (props) => {
         return (
             <div className='bookList'>
                <section>
-               
+                {/* {books} */}
                </section>
             </div>
         )

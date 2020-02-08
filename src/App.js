@@ -102,7 +102,7 @@ handleFilterType = (selectedBookType) => {
           handlePrintType={selectedPrint => this.handlePrintType(selectedPrint)}
           handleFilterType={selectedBookType => this.handleFilterType(selectedBookType)}
           />
-          <BookListings />
+          <BookListings books={this.state.books}/>
         </div>
     );
   }
