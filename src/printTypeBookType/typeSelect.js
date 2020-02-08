@@ -4,10 +4,12 @@ const typeSelect = (props) => {
     return (
         <div>
             <form>
-                <select onChange={props.handlePrintType}>
+                <select onChange={this.handlePrintType}>
+                    
                 </select>
                 
-                <select onChange={props.handleTypeOfBook}>
+                <select onChange={this.handleTypeOfBook}>
+                    
                 </select>
             </form>
         </div>

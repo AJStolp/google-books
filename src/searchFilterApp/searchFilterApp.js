@@ -6,7 +6,7 @@ const searchFilterApp = (props) => {
     return (
             <div>
                 <SearchBar handleSearch={props.handleSearch} handleSubmit={props.handleSubmit}/>
-                <TypeSelect handlePrintType={props.handlePrintType} handleBookType={props.handleBookType}/>
+                <TypeSelect handlePrintType={this.handlePrintType} handleBookType={this.handleTypeOfBook}/>
             </div>
         )
     }

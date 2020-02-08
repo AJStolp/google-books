@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import SearchFilterApp from './searchFilterApp/searchFilterApp';
 import BookListings from './bookListings/bookListings';
+import TypeSelect from './printTypeBookType/typeSelect';
 
 
 const googleUrl = 'https://www.googleapis.com/books/v1/volumes';
@@ -82,22 +83,26 @@ handlePrintType = (selectedPrint) => {
   })
 }
 
-handleTypeOfBook = (selectedType) => {
+handleTypeOfBook = (selectedBookType) => {
   this.setState({
-    bookType: selectedType
+    bookType: selectedBookType
   })
 }
 
 
   render() {
+    const printType = ['all', 'magazine', 'ebook'];
+    const bookType = ['all', 'free'];
+
+
       return (
         <div className="App">
           <Header />
           <SearchFilterApp
           handleSubmit={this.handleSubmit} 
           handleSearch={this.handleSearch}
-          handlePrintType={this.handlePrintType}
-          handleTypeOfBook={this.handleTypeOfBook}
+          handlePrintType={selectedPrint => this.handlePrintType (selectedPrint)}
+          handleTypeOfBook={selectedBookType => this.handleTypeOfBook(selectedBookType)}
           />
           <BookListings books={this.state.books}/>
         </div>
