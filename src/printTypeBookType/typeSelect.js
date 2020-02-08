@@ -4,13 +4,16 @@ const typeSelect = (props) => {
     return (
         <div>
             <form>
-                <select onChange={this.handlePrintType}>
+                <select onChange={event => props.handlePrintType(event.target.value)}>
                     <option>All</option>
                     <option>Magazine</option>
-                    <option>eBook</option>
+                    <option>Books</option>
                 </select>
-                <select onChange={this.handleTypeOfBook}>
-                <option>Free</option>
+                <select onChange={e => props.handleFilterType(e.target.value)}>
+                    <option>full</option>
+                    <option>ebooks</option>
+                    <option>paid-ebooks</option>
+                    <option>free-ebooks</option>
                 </select>
             </form>
         </div>
