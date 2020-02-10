@@ -18,6 +18,7 @@ class App extends React.Component {
       printType: 'all',
       searchField: '',
       filter: 'full',
+      maxResults: '20',
     }
     this.handleSearch = this.handleSearch.bind(this)
   }
@@ -37,6 +38,7 @@ handleSubmit = (event) => {
     q: this.state.searchField,
     printType: this.state.printType,
     filter: this.state.filter,
+    maxResults: this.state.maxResults,
   }
 
 

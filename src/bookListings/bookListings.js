@@ -1,20 +1,20 @@
 import React from 'react'
+import './bookListings.css'
 
 const bookListings = (props) => {
     const results = props.books.map( (value, i) => 
-    <ul>
-        <li value={value} key={i}>
-            {value}
+    <ul key={i} className='bookLists'>
+        <li value={value.id} key={i}>
+        <img src={value.volumeInfo.imageLinks.thumbnail} alt='book cover' className='thumbNails'/> {<br />}
+            {value.volumeInfo.title}{<br />}
+            {value.volumeInfo.authors}{<br />}
+            <a href={value.selfLink} target='_blank' className='thumbNailsApi'>Google Books</a>{<br />}
         </li>
     </ul>);
         return (
-            <div className='bookList'>
-               <section>
-                    <ul>
+                <section className='bookList'>
                     {results}
-                    </ul>
-               </section>
-            </div>
+                </section>
         )
 }
 

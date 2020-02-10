@@ -1,0 +1,22 @@
+.bookLists {
+    list-style-type: none;
+    width: 284px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+    text-align: center;
+}
+
+.bookList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 4em;
+}
+.thumbNails {
+    align-self: center;
+}
+.thumbNailsApi {
+    max-width: 5px;
+}
