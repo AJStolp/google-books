@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+.headerHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gainsboro;
+}
+.headerHeader > h1 {
+    color: blue;
+}
+.fas {
+    font-size: 100px;
+}
