@@ -6,8 +6,8 @@ const typeSelect = (props) => {
             <form>
                 <h3>Book Type</h3>
                 <select onChange={event => props.handlePrintType(event.target.value)}>
-                    <option>All</option>
-                    <option>magazines</option>
+                    {/* <option>All</option>
+                    <option>magazines</option> */}
                     <option>Books</option>
                 </select>
                 <h3>Print Type</h3>

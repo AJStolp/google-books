@@ -65,7 +65,7 @@ handleSubmit = (event) => {
     .then(data => {
       console.log(data);
       this.setState({
-        books: data
+        books: data.items
       })
     })
     .catch(err => {
